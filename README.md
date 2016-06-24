@@ -1,5 +1,5 @@
 # AndyStore
-use json、NSdictionary and NSUserDefaults to store、read、delete and clear data easily
+use json、NSDictionary and NSUserDefaults to store、read、delete and clear data easily
 
 
 __*First of all*__
@@ -29,7 +29,7 @@ __*Four methods:*__
 
 ##### *二、AndyDictStore*
 
-Just like AndyJsonStore, it also supports all Object-C types. But it stores data temporarily. Once your app is closed , the data it stores will be destoryed. Since it's builded based on NSdictionary.
+Just like AndyJsonStore, it also supports all Object-C types. But it stores data temporarily. Once your app is closed , the data it stores will be destoryed. Since it's builded based on NSDictionary.
 
 __*Four methods:*__
 
