@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AndyMainViewController">
+            <connections>
+                <outlet property="dictClearBtn" destination="001-5q-f2i" id="zi1-tL-wsE"/>
+                <outlet property="dictDeleteBtn" destination="uz7-oY-3wP" id="bNx-lr-y0z"/>
+                <outlet property="dictReadBtn" destination="BXz-zt-YSf" id="kHH-ks-JDS"/>
+                <outlet property="dictWriteBtn" destination="Et1-Wd-9EO" id="bKj-Lc-bz2"/>
+                <outlet property="jsonClearBtn" destination="CUw-dh-eOC" id="MDQ-dV-T7l"/>
+                <outlet property="jsonDeleteBtn" destination="ycv-2Y-2rT" id="6Mu-nx-XeU"/>
+                <outlet property="jsonReadBtn" destination="Mr9-8Z-lD1" id="hPe-og-UYp"/>
+                <outlet property="jsonWriteBtn" destination="czP-MP-KIN" id="m0y-k0-dIg"/>
+                <outlet property="userDefaultReadBtn" destination="8qr-cn-0R1" id="ata-vR-0d7"/>
+                <outlet property="userDefaultsClearBtn" destination="q0n-TB-WbX" id="jr4-yw-ctj"/>
+                <outlet property="userDefaultsDeleteBtn" destination="Wtx-Xi-s5F" id="Rez-A8-25c"/>
+                <outlet property="userDefaultsWriteBtn" destination="Vzb-Jz-ydv" id="19e-wc-pwF"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="czP-MP-KIN">
+                    <rect key="frame" x="3" y="33" width="95" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Json文件存储"/>
+                    <connections>
+                        <action selector="btnJsonWrite:" destination="-1" eventType="touchUpInside" id="rkc-QT-BF6"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Mr9-8Z-lD1">
+                    <rect key="frame" x="1" y="142" width="96" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Json文件读取"/>
+                    <connections>
+                        <action selector="btnJsonRead:" destination="-1" eventType="touchUpInside" id="kvl-bx-zCz"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ycv-2Y-2rT">
+                    <rect key="frame" x="3" y="278" width="94" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Json文件删除"/>
+                    <connections>
+                        <action selector="btnJsonDelete:" destination="-1" eventType="touchUpInside" id="KNz-FI-W1b"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="CUw-dh-eOC">
+                    <rect key="frame" x="8" y="417" width="82" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="全部清除"/>
+                    <connections>
+                        <action selector="btnJsonClear:" destination="-1" eventType="touchUpInside" id="ZTq-E5-NKK"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Vzb-Jz-ydv">
+                    <rect key="frame" x="106" y="33" width="127" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="UserDefaults存储"/>
+                    <connections>
+                        <action selector="btnUserDefaultsWrite:" destination="-1" eventType="touchUpInside" id="CDx-wp-EGy"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="8qr-cn-0R1">
+                    <rect key="frame" x="112" y="142" width="121" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="UserDefaults读取"/>
+                    <connections>
+                        <action selector="btnUserDefaultsRead:" destination="-1" eventType="touchUpInside" id="E6A-Gf-qzJ"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Wtx-Xi-s5F">
+                    <rect key="frame" x="106" y="278" width="127" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="UserDefaults删除"/>
+                    <connections>
+                        <action selector="btnUserDefaultsDelete:" destination="-1" eventType="touchUpInside" id="hLd-7g-mhO"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="q0n-TB-WbX">
+                    <rect key="frame" x="119" y="417" width="82" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="全部清除"/>
+                    <connections>
+                        <action selector="btnUserDefaultsClear:" destination="-1" eventType="touchUpInside" id="kR3-aj-p9v"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Et1-Wd-9EO">
+                    <rect key="frame" x="238" y="33" width="82" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Dict存储"/>
+                    <connections>
+                        <action selector="btnDictWrite:" destination="-1" eventType="touchUpInside" id="SMt-xU-bEq"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="BXz-zt-YSf">
+                    <rect key="frame" x="238" y="142" width="82" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Dict读取"/>
+                    <connections>
+                        <action selector="btnDictRead:" destination="-1" eventType="touchUpInside" id="Wvu-ae-1TZ"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="uz7-oY-3wP">
+                    <rect key="frame" x="238" y="278" width="82" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Dict删除"/>
+                    <connections>
+                        <action selector="btnDictDelete:" destination="-1" eventType="touchUpInside" id="rZl-kW-UQP"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="001-5q-f2i">
+                    <rect key="frame" x="230" y="417" width="82" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="全部清除"/>
+                    <connections>
+                        <action selector="btnDictClear:" destination="-1" eventType="touchUpInside" id="ejE-n9-YL1"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <point key="canvasLocation" x="342" y="221"/>
+        </view>
+    </objects>
+</document>
