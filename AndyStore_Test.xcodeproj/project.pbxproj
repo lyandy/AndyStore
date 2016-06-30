@@ -14,9 +14,6 @@
 		B63A97B61D1BDFB00054EAA1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B63A97B21D1BDFB00054EAA1 /* AppDelegate.m */; };
 		B63A97BD1D1BE0360054EAA1 /* AndyMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B63A97BB1D1BE0360054EAA1 /* AndyMainViewController.m */; };
 		B63A97BE1D1BE0360054EAA1 /* AndyMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B63A97BC1D1BE0360054EAA1 /* AndyMainViewController.xib */; };
-		B63A97CA1D1BE3390054EAA1 /* AndyFoundation.m in Sources */ = {isa = PBXBuildFile; fileRef = B63A97C51D1BE3390054EAA1 /* AndyFoundation.m */; };
-		B63A97CB1D1BE3390054EAA1 /* NSObject+AndyDurex.m in Sources */ = {isa = PBXBuildFile; fileRef = B63A97C71D1BE3390054EAA1 /* NSObject+AndyDurex.m */; };
-		B63A97CC1D1BE3390054EAA1 /* NSObject+AndyKeyValue.m in Sources */ = {isa = PBXBuildFile; fileRef = B63A97C91D1BE3390054EAA1 /* NSObject+AndyKeyValue.m */; };
 		B63A97CF1D1BE3770054EAA1 /* AndyDictStore.m in Sources */ = {isa = PBXBuildFile; fileRef = B63A97CE1D1BE3770054EAA1 /* AndyDictStore.m */; };
 		B63A97D21D1BE3830054EAA1 /* AndyJsonStore.m in Sources */ = {isa = PBXBuildFile; fileRef = B63A97D11D1BE3830054EAA1 /* AndyJsonStore.m */; };
 		B63A97D51D1BE3CB0054EAA1 /* AndyUserDefaultsStore.m in Sources */ = {isa = PBXBuildFile; fileRef = B63A97D41D1BE3CB0054EAA1 /* AndyUserDefaultsStore.m */; };
@@ -64,13 +61,6 @@
 		B63A97BC1D1BE0360054EAA1 /* AndyMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AndyMainViewController.xib; sourceTree = "<group>"; };
 		B63A97BF1D1BE0850054EAA1 /* Global.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Global.h; sourceTree = "<group>"; };
 		B63A97C11D1BE2D30054EAA1 /* AndyStore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AndyStore.h; sourceTree = "<group>"; };
-		B63A97C31D1BE3390054EAA1 /* AndyExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AndyExtension.h; sourceTree = "<group>"; };
-		B63A97C41D1BE3390054EAA1 /* AndyFoundation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AndyFoundation.h; sourceTree = "<group>"; };
-		B63A97C51D1BE3390054EAA1 /* AndyFoundation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AndyFoundation.m; sourceTree = "<group>"; };
-		B63A97C61D1BE3390054EAA1 /* NSObject+AndyDurex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+AndyDurex.h"; sourceTree = "<group>"; };
-		B63A97C71D1BE3390054EAA1 /* NSObject+AndyDurex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+AndyDurex.m"; sourceTree = "<group>"; };
-		B63A97C81D1BE3390054EAA1 /* NSObject+AndyKeyValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+AndyKeyValue.h"; sourceTree = "<group>"; };
-		B63A97C91D1BE3390054EAA1 /* NSObject+AndyKeyValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+AndyKeyValue.m"; sourceTree = "<group>"; };
 		B63A97CD1D1BE3770054EAA1 /* AndyDictStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AndyDictStore.h; sourceTree = "<group>"; };
 		B63A97CE1D1BE3770054EAA1 /* AndyDictStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AndyDictStore.m; sourceTree = "<group>"; };
 		B63A97D01D1BE3830054EAA1 /* AndyJsonStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AndyJsonStore.h; sourceTree = "<group>"; };
@@ -260,7 +250,6 @@
 		B63A97C01D1BE2C70054EAA1 /* AndyStore */ = {
 			isa = PBXGroup;
 			children = (
-				B63A97C21D1BE3390054EAA1 /* AndyExtension */,
 				B63A97C11D1BE2D30054EAA1 /* AndyStore.h */,
 				B63A97CD1D1BE3770054EAA1 /* AndyDictStore.h */,
 				B63A97CE1D1BE3770054EAA1 /* AndyDictStore.m */,
@@ -271,20 +260,6 @@
 				B63A97E51D1C037E0054EAA1 /* AndySingleton.h */,
 			);
 			path = AndyStore;
-			sourceTree = "<group>";
-		};
-		B63A97C21D1BE3390054EAA1 /* AndyExtension */ = {
-			isa = PBXGroup;
-			children = (
-				B63A97C31D1BE3390054EAA1 /* AndyExtension.h */,
-				B63A97C41D1BE3390054EAA1 /* AndyFoundation.h */,
-				B63A97C51D1BE3390054EAA1 /* AndyFoundation.m */,
-				B63A97C61D1BE3390054EAA1 /* NSObject+AndyDurex.h */,
-				B63A97C71D1BE3390054EAA1 /* NSObject+AndyDurex.m */,
-				B63A97C81D1BE3390054EAA1 /* NSObject+AndyKeyValue.h */,
-				B63A97C91D1BE3390054EAA1 /* NSObject+AndyKeyValue.m */,
-			);
-			path = AndyExtension;
 			sourceTree = "<group>";
 		};
 		C341ACE1E8DF09CB39B77BAC /* Pods */ = {
@@ -482,9 +457,6 @@
 				B63A97B61D1BDFB00054EAA1 /* AppDelegate.m in Sources */,
 				B63A977B1D1BDF7A0054EAA1 /* main.m in Sources */,
 				B63A97D81D1BE4190054EAA1 /* Person.m in Sources */,
-				B63A97CB1D1BE3390054EAA1 /* NSObject+AndyDurex.m in Sources */,
-				B63A97CC1D1BE3390054EAA1 /* NSObject+AndyKeyValue.m in Sources */,
-				B63A97CA1D1BE3390054EAA1 /* AndyFoundation.m in Sources */,
 				B63A97D21D1BE3830054EAA1 /* AndyJsonStore.m in Sources */,
 				B63A97D51D1BE3CB0054EAA1 /* AndyUserDefaultsStore.m in Sources */,
 				B63A97CF1D1BE3770054EAA1 /* AndyDictStore.m in Sources */,

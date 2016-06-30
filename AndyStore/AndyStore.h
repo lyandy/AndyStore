@@ -12,5 +12,6 @@
 #import "AndyDictStore.h"
 #import "AndyJsonStore.h"
 #import "AndyUserDefaultsStore.h"
+#import "AndyExtension.h"
 
 #endif /* AndyStore_h */

@@ -4,6 +4,7 @@ use_frameworks!
 
 target 'AndyStore_Test' do
 
+pod 'AndyExtension'
 pod 'Masonry'
 #pod 'ReactiveCocoa'
 
