@@ -7,7 +7,7 @@
 //
 
 #import "AndyJsonStore.h"
-#import "AndyExtension.h"
+#import <AndyExtension/AndyExtension.h>
 
 @interface AndyJsonStore ()
 

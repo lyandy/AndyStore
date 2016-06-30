@@ -1,6 +1,7 @@
 # AndyStore
 use json、NSDictionary and NSUserDefaults to store、read、delete and clear data easily
 
+__Use in pod:__ pod 'AndyStore'
 
 __*First of all*__
 
@@ -61,7 +62,7 @@ __*Four methods:*__
 
 _Before you run, you need pod install first. :)_
 
-_The version is 1.0.0_
+_The version is 1.0.3_
 
 _There are a lot of experience to improve_
 
