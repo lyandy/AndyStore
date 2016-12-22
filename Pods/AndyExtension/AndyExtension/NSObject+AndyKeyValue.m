@@ -62,6 +62,7 @@
         //如果value为nil的话，就去andy_replacedKeyFromPropertyName方法里找有没有实现对应的
         if (value == nil)
         {
+            //这里实际上应该用 respondsToSelector 判断一下是否实现了，当然这里我采用了runtime的动态添加方法 andy_resolveClassMethod 来解决的
             NSDictionary *replacedKeyDict = [self andy_replacedKeyFromPropertyName];
             if (replacedKeyDict != nil)
             {
@@ -102,6 +103,7 @@
         else if ([value isKindOfClass:[NSArray class]])
         {
             //如果已经andy_objectClassInArray方法，指定数据里的数据类型
+            //这里实际上应该用 respondsToSelector 判断一下是否实现了，当然这里我采用了runtime的动态添加方法 andy_resolveClassMethod 来解决的
             NSDictionary *replacedArrayModelDict = [self andy_objectClassInArray];
             if (replacedArrayModelDict != nil)
             {

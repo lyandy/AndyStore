@@ -1,15 +1,15 @@
 PODS:
-  - AndyExtension (1.0.2)
-  - Masonry (1.0.1)
+  - AndyExtension (1.0.3)
+  - Masonry (1.0.2)
 
 DEPENDENCIES:
   - AndyExtension
   - Masonry
 
 SPEC CHECKSUMS:
-  AndyExtension: 6303a8e47649b3d03cd9803ec01c34a41f663585
-  Masonry: a1a931a0d08870ed8ae415a2ea5ea68ebcac77df
+  AndyExtension: 12431834a213cbb21032d1dcf2c62853ce5381fa
+  Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
 
 PODFILE CHECKSUM: 43213017b8e4c49fa2875a2d00fbe18ee1681d60
 
-COCOAPODS: 1.0.1
+COCOAPODS: 1.2.0.beta.1
