@@ -20,6 +20,7 @@
 		B63A97D81D1BE4190054EAA1 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = B63A97D71D1BE4190054EAA1 /* Person.m */; };
 		B63A97DE1D1BE43B0054EAA1 /* Dog.m in Sources */ = {isa = PBXBuildFile; fileRef = B63A97DD1D1BE43B0054EAA1 /* Dog.m */; };
 		B63A97E41D1BE4B40054EAA1 /* Toy.m in Sources */ = {isa = PBXBuildFile; fileRef = B63A97E31D1BE4B40054EAA1 /* Toy.m */; };
+		B6BA3A801E5EF593006E7983 /* AndyStoreConst.m in Sources */ = {isa = PBXBuildFile; fileRef = B6BA3A7F1E5EF593006E7983 /* AndyStoreConst.m */; };
 		F3083283FCD23B40263449CA /* Pods_AndyStore_Test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DF36A44E0E5CADB71CFACDD /* Pods_AndyStore_Test.framework */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +75,8 @@
 		B63A97E21D1BE4B40054EAA1 /* Toy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Toy.h; sourceTree = "<group>"; };
 		B63A97E31D1BE4B40054EAA1 /* Toy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Toy.m; sourceTree = "<group>"; };
 		B63A97E51D1C037E0054EAA1 /* AndySingleton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AndySingleton.h; sourceTree = "<group>"; };
+		B6BA3A7E1E5EF593006E7983 /* AndyStoreConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AndyStoreConst.h; sourceTree = "<group>"; };
+		B6BA3A7F1E5EF593006E7983 /* AndyStoreConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AndyStoreConst.m; sourceTree = "<group>"; };
 		D34B4551F5DE15CCA52859D2 /* Pods-AndyStore_Test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AndyStore_Test.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AndyStore_Test/Pods-AndyStore_Test.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -258,6 +261,8 @@
 				B63A97D31D1BE3CB0054EAA1 /* AndyUserDefaultsStore.h */,
 				B63A97D41D1BE3CB0054EAA1 /* AndyUserDefaultsStore.m */,
 				B63A97E51D1C037E0054EAA1 /* AndySingleton.h */,
+				B6BA3A7E1E5EF593006E7983 /* AndyStoreConst.h */,
+				B6BA3A7F1E5EF593006E7983 /* AndyStoreConst.m */,
 			);
 			path = AndyStore;
 			sourceTree = "<group>";
@@ -342,6 +347,7 @@
 				TargetAttributes = {
 					B63A97751D1BDF7A0054EAA1 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 37PBFNZ5HH;
 					};
 					B63A978E1D1BDF7A0054EAA1 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -461,6 +467,7 @@
 				B63A97D51D1BE3CB0054EAA1 /* AndyUserDefaultsStore.m in Sources */,
 				B63A97CF1D1BE3770054EAA1 /* AndyDictStore.m in Sources */,
 				B63A97BD1D1BE0360054EAA1 /* AndyMainViewController.m in Sources */,
+				B6BA3A801E5EF593006E7983 /* AndyStoreConst.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -583,11 +590,12 @@
 			baseConfigurationReference = D34B4551F5DE15CCA52859D2 /* Pods-AndyStore_Test.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 37PBFNZ5HH;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "${SRCROOT}/AndyStore_Test/Other/PrefixHeader.pch";
 				INFOPLIST_FILE = AndyStore_Test/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.andy4app.AndyStore-Test";
+				PRODUCT_BUNDLE_IDENTIFIER = andy.andy.andy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = "$SRCROOT/**";
 				USE_HEADERMAP = YES;
@@ -599,11 +607,12 @@
 			baseConfigurationReference = B09D3023EDEF810968AB6657 /* Pods-AndyStore_Test.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 37PBFNZ5HH;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "${SRCROOT}/AndyStore_Test/Other/PrefixHeader.pch";
 				INFOPLIST_FILE = AndyStore_Test/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.andy4app.AndyStore-Test";
+				PRODUCT_BUNDLE_IDENTIFIER = andy.andy.andy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = "$SRCROOT/**";
 				USE_HEADERMAP = YES;
