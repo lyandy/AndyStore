@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "AndyStore"
-  s.version      = "1.0.6"
+  s.version      = "1.0.7"
   s.summary      = "Use json、NSDictionary and NSUserDefaults to store、read、delete and clear data easily"
 
   # This description is used to generate tags and improve search results.
@@ -82,7 +82,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/lyandy/AndyStore.git", :tag => "1.0.6" }
+  s.source       = { :git => "https://github.com/lyandy/AndyStore.git", :tag => s.version }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -135,6 +135,6 @@ Pod::Spec.new do |s|
   s.requires_arc = true
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
-  s.dependency "AndyExtension", "~> 1.0.3"
+  s.dependency "AndyExtension", "~> 1.0.4"
 
 end
