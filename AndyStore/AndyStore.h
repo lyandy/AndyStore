@@ -9,6 +9,7 @@
 #ifndef AndyStore_h
 #define AndyStore_h
 
+#import "AndySingleton.h"
 #import "AndyDictStore.h"
 #import "AndyJsonStore.h"
 #import "AndyUserDefaultsStore.h"
