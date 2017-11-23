@@ -210,14 +210,14 @@ static NSString *key = @"test";
 }
 
 
-#pragma mark - AndyDictStore方法，临时村粗，任何类型，基于NSMutableDictionary实现
+#pragma mark - AndyDictStore方法，临时存储，任何类型，基于NSMutableDictionary实现
 
 #pragma mark 存储
 - (IBAction)btnDictWrite:(UIButton *)sender
 {
-    //[[AndyDictStore sharedDictStore] setOrUpdateValue:self.person ForKey:key];
+    [[AndyDictStore sharedDictStore] setOrUpdateValue:self.person ForKey:key];
     
-    [[AndyDictStore sharedDictStore] copy];
+//    [[AndyDictStore sharedDictStore] copy];
 }
 
 #pragma mark 读取

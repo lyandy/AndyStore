@@ -152,12 +152,12 @@ SingletonM(JsonStore);
 
 - (NSString *)getJsonStoreDirectoryPath
 {
-    NSString *directoryPath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"JsonStore"];
+    NSString *directoryPath = [[NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"JsonStore"];
     
     BOOL isDirectoryAlreadyExists = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:directoryPath error:nil] != nil;
     if (!isDirectoryAlreadyExists)
     {
-        [[NSFileManager defaultManager] createDirectoryAtPath:directoryPath withIntermediateDirectories:NO attributes:nil error:nil];
+        [[NSFileManager defaultManager] createDirectoryAtPath:directoryPath withIntermediateDirectories:YES attributes:nil error:nil];
     }
     
     return directoryPath;

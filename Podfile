@@ -1,10 +1,11 @@
+source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '7.0'
 
 use_frameworks!
 
 target 'AndyStore_Test' do
 
-pod 'AndyExtension'
+pod 'AndyExtension', '~> 1.0.6'
 pod 'Masonry'
 #pod 'ReactiveCocoa'
 
