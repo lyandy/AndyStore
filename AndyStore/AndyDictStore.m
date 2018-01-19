@@ -7,6 +7,7 @@
 //
 
 #import "AndyDictStore.h"
+#import "AndyStoreConst.h"
 
 @interface AndyDictStore ()
 
@@ -63,18 +64,27 @@ static id instance = nil;
 
 - (BOOL)setOrUpdateValue:(id)value ForKey:(NSString *)key
 {
-    @try {
-        
-        if ([self.dictM objectForKey:key] != nil)
-        {
-            self.dictM[key] = value;
+    AndyStoreAssert(value != nil && key != nil, @"AndyDictStore setOrUpdateValue:ForKey: value or key can not be nil");
+    
+    if (value != nil && key != nil)
+    {
+        @try {
+            
+            if ([self.dictM objectForKey:key] != nil)
+            {
+                self.dictM[key] = value;
+            }
+            else
+            {
+                [self.dictM setObject:value forKey:key];
+            }
+            return YES;
+        } @catch (NSException *exception) {
+            return NO;
         }
-        else
-        {
-            [self.dictM setObject:value forKey:key];
-        }
-        return YES;
-    } @catch (NSException *exception) {
+    }
+    else
+    {
         return NO;
     }
 }

@@ -10,7 +10,7 @@
 #define AndySingleton_h
 
 //.h文件的实现
-#define SingletonH(methodName) + (instancetype)shared##methodName;
+#define SingletonH(methodName) + (nonnull instancetype)shared##methodName;
 
 //.m文件的实现
 #define SingletonM(methodName) \

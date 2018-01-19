@@ -7,6 +7,7 @@
 //
 
 #import "AndyUserDefaultsStore.h"
+#import "AndyStoreConst.h"
 
 @implementation AndyUserDefaultsStore
 
@@ -14,17 +15,22 @@ SingletonM(UserDefaultsStore);
 
 - (BOOL)setOrUpdateValue:(id)value ForKey:(NSString *)key
 {
-    @try {
-        
-        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        
-        [defaults setObject:value forKey:key];
-        
-        [defaults synchronize];
-        
-        return YES;
-    } @catch (NSException *exception) {
-        return NO;
+    AndyStoreAssert(value != nil && key != nil, @"AndyUserDefaultsStore setOrUpdateValue:ForKey: value or key can not be nil");
+    
+    if (value != nil && key != nil)
+    {
+        @try {
+            
+            NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+            
+            [defaults setObject:value forKey:key];
+            
+            [defaults synchronize];
+            
+            return YES;
+        } @catch (NSException *exception) {
+            return NO;
+        }
     }
 }
 

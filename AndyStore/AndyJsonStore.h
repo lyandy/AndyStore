@@ -13,11 +13,11 @@
 
 SingletonH(JsonStore);
 
-- (BOOL)setOrUpdateValue:(id)value ForKey:(NSString *)key;
+- (BOOL)setOrUpdateValue:(nonnull id)value ForKey:(nonnull NSString *)key;
 
-- (instancetype)getValueForClass:(Class)valueClass ForKey:(NSString *)key DefaultValue:(id)defaultValue ;
+- (nullable instancetype)getValueForClass:(nullable Class)valueClass ForKey:(nullable NSString *)key DefaultValue:(nullable id)defaultValue ;
 
-- (BOOL)removeValueForKey:(NSString *)key;
+- (BOOL)removeValueForKey:(nullable NSString *)key;
 
 - (BOOL)clear;
 

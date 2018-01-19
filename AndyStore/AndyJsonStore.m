@@ -8,6 +8,7 @@
 
 #import <AndyExtension/AndyExtension.h>
 #import "AndyJsonStore.h"
+#import "AndyStoreConst.h"
 
 @interface AndyJsonStore ()
 
@@ -21,32 +22,41 @@ SingletonM(JsonStore);
 
 - (BOOL)setOrUpdateValue:(id)value ForKey:(NSString *)key
 {
-    self.key = [key copy];
+    AndyStoreAssert(value != nil && key != nil, @"AndyJsonStore setOrUpdateValue:ForKey: value or key can not be nil");
     
-    NSString *jsonStoreFilePath = [self getJsonStoreFilePath];
-    
-    if (jsonStoreFilePath != nil)
+    if (value != nil && key != nil)
     {
-        @try {
-            NSString *jsonString;
-            
-            if ([value isKindOfClass:[NSValue class]] || [value isKindOfClass:[NSString class]])
-            {
-                jsonString = [NSString stringWithFormat:@"%@", value];
+        self.key = [key copy];
+        
+        NSString *jsonStoreFilePath = [self getJsonStoreFilePath];
+        
+        if (jsonStoreFilePath != nil)
+        {
+            @try {
+                NSString *jsonString;
+                
+                if ([value isKindOfClass:[NSValue class]] || [value isKindOfClass:[NSString class]])
+                {
+                    jsonString = [NSString stringWithFormat:@"%@", value];
+                }
+                else if ([value isKindOfClass:[NSURL class]])
+                {
+                    jsonString = [value absoluteString];
+                }
+                else
+                {
+                    jsonString = [value andy_JSONString];
+                }
+                
+                BOOL isSuccess = [self saveContentToFile:jsonString atomically:YES];
+                return isSuccess;
+                
+            } @catch (NSException *exception) {
+                return NO;
             }
-            else if ([value isKindOfClass:[NSURL class]])
-            {
-                jsonString = [value absoluteString];
-            }
-            else
-            {
-                jsonString = [value andy_JSONString];
-            }
-            
-            BOOL isSuccess = [self saveContentToFile:jsonString atomically:YES];
-            return isSuccess;
-            
-        } @catch (NSException *exception) {
+        }
+        else
+        {
             return NO;
         }
     }
