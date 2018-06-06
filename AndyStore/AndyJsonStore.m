@@ -93,11 +93,18 @@ SingletonM(JsonStore);
             else
             {
                 NSData *jsonData = [NSData dataWithContentsOfFile:jsonStoreFilePath];
-                NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:jsonData options:kNilOptions error:&error];
-                
-                if (error == nil)
+                if (jsonData != nil)
                 {
-                    return [valueClass andy_objectWithKeyValues:dict];
+                    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:jsonData options:kNilOptions error:&error];
+                    
+                    if (error == nil)
+                    {
+                        return [valueClass andy_objectWithKeyValues:dict];
+                    }
+                    else
+                    {
+                        return defaultValue;
+                    }
                 }
                 else
                 {

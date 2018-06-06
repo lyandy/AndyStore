@@ -62,7 +62,7 @@ __*Four methods:*__
 
 _Before you run, you need pod install first. :)_
 
-_The version is 1.0.9_
+_The version is 1.1.0_
 
 _There are a lot of experience to improve_
 
