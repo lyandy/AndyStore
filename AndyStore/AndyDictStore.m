@@ -9,58 +9,11 @@
 #import "AndyDictStore.h"
 #import "AndyStoreConst.h"
 
-@interface AndyDictStore ()
-
-/**
- *  保持原子性，防止线程死锁
- */
-@property (atomic, strong) NSMutableDictionary *dictM;
-
-@end
-
 @implementation AndyDictStore
 
-static id instance = nil;
+SingletonM(DictStore)
 
-+ (instancetype)allocWithZone:(struct _NSZone *)zone
-{
-    static dispatch_once_t oneToken;
-    
-    dispatch_once(&oneToken, ^{
-        instance = [super allocWithZone:zone];
-    });
-    
-    return instance;
-}
-
-- (id)copyWithZone:(NSZone *)zone
-{
-    return instance;
-}
-
-- (id)mutableCopyWithZone:(NSZone *)zone
-{
-    return instance;
-}
-
-- (instancetype)init
-{
-    static dispatch_once_t oneToken;
-    
-    dispatch_once(&oneToken, ^{
-        instance = [super init];
-        
-        self.dictM = [NSMutableDictionary dictionary];
-    });
-    
-    return instance;
-}
-
-+ (instancetype)sharedDictStore
-{
-    return [[self alloc] init];
-}
-
+static NSMutableDictionary *dictM;
 
 - (BOOL)setOrUpdateValue:(id)value ForKey:(NSString *)key
 {
@@ -70,14 +23,24 @@ static id instance = nil;
     {
         @try {
             
-            if ([self.dictM objectForKey:key] != nil)
+            AndySemaphoreBegin
+            
+            if (dictM == nil)
             {
-                self.dictM[key] = value;
+                dictM = [NSMutableDictionary dictionary];
+            }
+            
+            if ([dictM objectForKey:key] != nil)
+            {
+                dictM[key] = value;
             }
             else
             {
-                [self.dictM setObject:value forKey:key];
+                [dictM setObject:value forKey:key];
             }
+            
+            AndySemaphoreEnd
+            
             return YES;
         } @catch (NSException *exception) {
             return NO;
@@ -91,7 +54,11 @@ static id instance = nil;
 
 - (instancetype)getValueForKey:(NSString *)key DefaultValue:(id)defaultValue
 {
-    id value = [self.dictM objectForKey:key];
+    AndySemaphoreBegin
+    
+    id value = [dictM objectForKey:key];
+    
+    AndySemaphoreEnd
     
     if (value != nil)
     {
@@ -105,14 +72,22 @@ static id instance = nil;
 
 - (BOOL)removeValueForKey:(NSString *)key
 {
-    [self.dictM removeObjectForKey:key];
+    AndySemaphoreBegin
+    
+    [dictM removeObjectForKey:key];
+    
+    AndySemaphoreEnd
     
     return YES;
 }
 
 - (BOOL)clear
 {
-    [self.dictM removeAllObjects];
+    AndySemaphoreBegin
+    
+    [dictM removeAllObjects];
+    
+    AndySemaphoreEnd
     
     return YES;
 }
