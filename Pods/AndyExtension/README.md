@@ -84,7 +84,7 @@ _AnyExtionsion aimed to Combine JSON to Model easily._
 
 #### __*The last:*__
 
-_The version is 1.0.6_
+_The version is 1.0.7_
 
 _There are a lot of experience to improve_
 

@@ -28,7 +28,11 @@
         NSString *jsonString = [[NSString alloc] initWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
         
         NSData *jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
-        dict = [NSJSONSerialization JSONObjectWithData:jsonData options:kNilOptions error:nil];
+        if (jsonData) {
+            dict = [NSJSONSerialization JSONObjectWithData:jsonData options:kNilOptions error:nil];
+        } else {
+            return nil;
+        }
     }
     
     return [self andy_objectWithKeyValues:dict];
@@ -129,8 +133,8 @@
             }
         }
         
-        AndyExtensionAssert(value != nil, @"andy_objectWithKeyValues: value can not be nil");
-        AndyExtensionAssert(key != nil, @"andy_objectWithKeyValues: key can not be nil");
+//        AndyExtensionAssert(value != nil, @"andy_objectWithKeyValues: value can not be nil");
+//        AndyExtensionAssert(key != nil, @"andy_objectWithKeyValues: key can not be nil");
         
         if (value != nil && key != nil) {
             // KVC赋值:不能传空. 万一出现空值则有杜蕾斯拦截错误，不会崩溃 --- 不建议第三方库自己拦截
