@@ -18,8 +18,8 @@ SingletonH(DictStore);
 
 - (nullable instancetype)getValueForKey:(nullable NSString *)key DefaultValue:(nullable id)defaultValue ;
 
-- (BOOL)removeValueForKey:(nullable NSString *)key;
+- (void)removeValueForKey:(nullable NSString *)key;
 
-- (BOOL)clear;
+- (void)clear;
 
 @end

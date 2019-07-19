@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "AndyStore"
-  s.version      = "1.1.1"
+  s.version      = "1.1.2"
   s.summary      = "Use json、NSDictionary and NSUserDefaults to store、read、delete and clear data easily"
 
   # This description is used to generate tags and improve search results.
