@@ -15,7 +15,7 @@
     NSMutableDictionary *_dictM;
 }
 
-static id instance = nil;
+static AndyDictStore *instance = nil;
 
 + (instancetype)allocWithZone:(struct _NSZone *)zone
 {
@@ -44,8 +44,8 @@ static id instance = nil;
     
     dispatch_once(&oneToken, ^{
         instance = [super init];
-        _concurrent_queue = dispatch_queue_create("dictM_read_write_queue", DISPATCH_QUEUE_CONCURRENT);
-        _dictM = [NSMutableDictionary dictionary];
+        instance->_concurrent_queue = dispatch_queue_create("dictM_read_write_queue", DISPATCH_QUEUE_CONCURRENT);
+        instance->_dictM = [NSMutableDictionary dictionary];
     });
     
     return instance;
@@ -65,13 +65,13 @@ static id instance = nil;
         @try {
         
             dispatch_barrier_sync(_concurrent_queue, ^{
-                if ([_dictM objectForKey:key] != nil)
+                if ([self->_dictM objectForKey:key] != nil)
                 {
-                    _dictM[key] = value;
+                    self->_dictM[key] = value;
                 }
                 else
                 {
-                    [_dictM setObject:value forKey:key];
+                    [self->_dictM setObject:value forKey:key];
                 }
             });
             return YES;
@@ -90,7 +90,7 @@ static id instance = nil;
     __block id value = nil;
     
     dispatch_sync(_concurrent_queue, ^{
-        value = [_dictM objectForKey:key];
+        value = [self->_dictM objectForKey:key];
     });
     
     if (value != nil)
@@ -106,14 +106,14 @@ static id instance = nil;
 - (void)removeValueForKey:(NSString *)key
 {
     dispatch_barrier_async(_concurrent_queue, ^{
-        [_dictM removeObjectForKey:key];
+        [self->_dictM removeObjectForKey:key];
     });
 }
 
 - (void)clear
 {
     dispatch_barrier_async(_concurrent_queue, ^{
-        [_dictM removeAllObjects];
+        [self->_dictM removeAllObjects];
     });
 }
 
